@@ -71,8 +71,8 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#" class="add-item" precio="5499" item="Moto G5 Plus">Añadir al carrito</a></p>
-                            <p>$ 5,499</p>
+                            <p><a href="#" id="add-item" precio="4999" item="Moto G5 Plus">Añadir al carrito</a></p>
+                            <p>$ 4,999</p>
                         </div>
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
@@ -90,15 +90,15 @@
                 <div class="col s12 m4">
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/samsung_j7.jpg">
+                            <img class="activator" src="assets/product/g5_plus.jpg">
                         </div>
                         <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Samsung J7<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#" class="add-item" precio="4999" item="Samsung J7">Añadir al carrito</a></p>
+                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
+                            <p><a href="#">Añadir al carrito</a></p>
                             <p>$ 4,999</p>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Samsung J7<i class="material-icons right">close</i></span>
+                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
                             <p>Pantalla 5.2", 1080 x 1920 pixels <br>
                                Procesador Snapdragon 625 2GHz <br>
                                2GB/3GB/4GB RAM <br>
@@ -186,7 +186,7 @@
                 empty: 'No hay ningún producto'
             }
         });
-        $(".add-item").click(function (e){
+        $("#add-item").click(function (e){
             e.stopPropagation();
             paypal.minicart.cart.add({
                 business: 'dan.raudales.26@gmail.com',
