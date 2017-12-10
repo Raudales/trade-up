@@ -58,6 +58,19 @@
             <h3 class="center">Nuestros productos</h3><br>
             <div class="divider"></div>
 
+            <?php
+                require 'php/connection.php';
+                $mysqli = connect();
+                if ($mysqli === false){
+                    die("ERROR: No se establecio la conexion. ". mysqli_connect_error());
+                } 
+                $mysqli->real_query("SELECT * FROM productos");        
+                $resultado = $mysqli->use_result();
+                while ($fila = $resultado->fetch_assoc()) {
+                    echo $fila['id'].", ". $fila['producto']."<br>";
+                }
+            ?>
+
             <div class="row" style="margin-top: 15px">
                 <div class="col s12 m4">
                     <div class="card">
