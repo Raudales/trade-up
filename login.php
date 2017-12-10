@@ -71,8 +71,7 @@
                                 <input id="password" name="password" type="password" class="validate" required="true">
                                 <label for="password">Contraseña</label>
                             </div>
-                            <button type="submit">Enviar</button>
-                            <a href="#" class="btn center">Iniciar sesión</a><br><br>
+                            <button class="btn center" type="submit">Iniciar sesión</button><br><br>
                         </div>
                     </form>
                 </div>

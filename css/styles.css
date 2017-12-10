@@ -5,6 +5,9 @@ html {
     background-color: #ECC44A;;
     text-transform: none;
 }
+.btn:hover {
+    background-color: #ECC44A;;
+}
 .card {
     z-index: 0;
 }
