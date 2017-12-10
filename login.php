@@ -1,3 +1,8 @@
+<?php
+    if(isset($_SESSION['user'])){
+        echo $_SESSION['user'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,45 +27,18 @@
                 <ul class="right hide-on-med-and-down">
                     <li class="nav-menu"><a href="index.php"><i class="material-icons left">home</i>Inicio</a></li>
                     <li class="nav-menu"><a href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li>
-                    <li class="nav-menu activo"><a href="#"><i class="material-icons left">phone</i>Contacto</a></li>
-                    <li class="nav-menu"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
+                    <li class="nav-menu"><a href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li>
+                    <li class="nav-menu activo"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
                 </ul>
             </div>
         </nav>
     </div>
     
     <ul id="slide-out" class="side-nav">
-        <?php
-            if(isset($_SESSION['user'])){
-        ?>
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="assets/img/back-profile.jpg">
-                    </div>
-                    <a href="#!user"><img class="circle" src="assets/img/male.png"></a>
-                    <a href="#!name"><span class="white-text name">Daniel Díaz Raudales</span></a>
-                    <a href="#!email"><span class="white-text email">dan.raudales.26@gmail.com</span></a>
-                </div>
-            </li>
-        <?php
-            }
-        ?>
-            <br><li><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
-            <li><a class="waves-effect" href="#"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
-            <li class="activo"><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
-            <li class="nav-menu"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
-        <?php
-            if(isset($_SESSION['user'])){
-        ?>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">mode_edit</i>Editar perfil</a></li><hr>        
-            <li><a class="waves-effect" href="#!"><i class="material-icons">local_offer</i>Mis productos</a></li><hr>        
-            <li><a class="waves-effect" href="#!"><i class="material-icons">local_grocery_store</i>Carrito de compras</a></li><hr>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">markunread_mailbox</i>Mis mensajes</a></li><hr>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">person_outline</i>Cerrar sesión</a></li><hr>
-        <?php
-            }
-        ?>
+        <br><li><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
+        <li><a class="waves-effect" href="#"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
+        <li><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
+        <li class="activo"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
     </ul>
 
     <!--Body-->
@@ -71,93 +49,70 @@
             <a class="carousel-item" href="#three!"><img src="assets/img/3.png"></a>
             <a class="carousel-item" href="#four!"><img src="assets/img/3.jpg"></a>
         </div>
-        <div class="contenedor2">
-            <!-- New products-->
-            <h4 class="center">Nuevos productos</h4>
-            <div class="divider"></div>
-            <div class="row" style="margin-top: 15px">
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/g5_plus.jpg">
+
+            <div class="contenedor2">
+                <div class="row" style="margin-top: 15px">
+                <ul class="tabs">
+                    <li class="tab col s6 m6"><a class="active" href="#iniciar">Iniciar sesión</a></li>
+                    <li class="tab col s6 m6"><a href="#registrarme">Registrarme</a></li>
+                </ul>
+                <div id="iniciar" class="col s12 m12"><br>
+                    <h4>Inicia sesión</h4>
+                    <div class="divider"></div>
+                    <form method="post" class="col s12 m12 l12" action="php/iniciar.php">
+                        <div class="row">
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">mail</i>
+                                <input id="correo" name="correo" type="email" class="validate" required="true">
+                                <label for="correo">Correo electronico</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="password" name="password" type="password" class="validate" required="true">
+                                <label for="password">Contraseña</label>
+                            </div>
+                            <button type="submit">Enviar</button>
+                            <a href="#" class="btn center">Iniciar sesión</a><br><br>
                         </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#" id="add-item" precio="4999" item="Moto G5 Plus">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
+                    </form>
+                </div>
+                <div id="registrarme" class="col s12 m12"><br>
+                <h4>Registrate</h4>
+                <div class="divider"></div>
+                <form method="post" class="col s12 m12 l12" action="../php/registro.php">
+                        <div class="row">
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="nombre" type="text" class="validate" required="true">
+                                <label for="nombre">Nombre</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">mail</i>
+                                <input id="email" type="email" class="validate" required="true">
+                                <label for="email">Correo elétronico</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="pass" type="password" class="validate" required="true">
+                                <label for="pass">Contraseña</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="pass2" type="password" class="validate" required="true">
+                                <label for="pass2">Confirmar contraseña</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">wc</i>
+                                <select>
+                                    <option value="" disabled selected>Sexo</option>
+                                    <option value="H">Hombre</option>
+                                    <option value="M">Mujer</option>
+                                </select>
                             </div>
                         </div>
+                        <a href="php/registro.php" type="submit" class="btn center">Registrarme</a><br><br>
+                    </form>
                 </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/g5_plus.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/g5_plus.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            <!-- About Trade Up -->
-            <h4>¿Qué es Trade Up?</h4>
-            <div class="divider"></div>
-            <div class="row">
-                <div class="col s4"><br>
-                    <img src="assets/img/trade.png" class="responsive-img">
-                </div>
-                <div class="col s8"><br>
-                    <h5>Acerca de Trade Up</h5>
-                    <p class="flow-text">
-                        Es una de las ...
-                    </p>
                 </div>
             </div>
         </div>
@@ -190,29 +145,15 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript">
-        paypal.minicart.render({
-            strings: {
-                button: 'Pagar',
-                buttonAlt: 'Total',
-                subTotal: 'Total',
-                empty: 'No hay ningún producto'
-            }
-        });
-        $("#add-item").click(function (e){
-            e.stopPropagation();
-            paypal.minicart.cart.add({
-                business: 'dan.raudales.26@gmail.com',
-                item_name: $(this).attr("item"),
-                amount: $(this).attr("precio"),
-                currency_code: 'MXN',
-            })
-        })
+        
         $(document).ready(function(){            
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
+            $('ul.tabs').tabs();
             $("#side-bar").sideNav({});
             $(".button-collapse").sideNav({
                 draggable: true
             });
-            $('.carousel.carousel-slider').carousel({fullWidth: true});
+            $('select').material_select();
         });
     </script> 
 </body>

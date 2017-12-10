@@ -1,6 +1,10 @@
 html {
     background: #E9E9E9;
 }
+.btn {
+    background-color: #ECC44A;;
+    text-transform: none;
+}
 .card {
     z-index: 0;
 }
@@ -34,4 +38,21 @@ h5 {
 }
 ul li.nav-menu:hover {
     background: #ECC44A;
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+    background: #fafafa;
+    color: black;
+    text-transform: none;
+}
+.tabs .tab, .tabs .tab a.active {
+    font-size: 20px;
+    font-weight: 700;
+}
+.tabs .tab a {
+    background: #fafafa;
+    color:black;
+    text-transform: none;
+}
+.tabs .indicator {
+    background-color: #ECC44A;   
 }

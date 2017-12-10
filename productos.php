@@ -31,6 +31,7 @@
     
     <ul id="slide-out" class="side-nav">
         <?php
+            session_start();
             if(isset($_SESSION['user'])){
         ?>
             <li>

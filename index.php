@@ -31,6 +31,7 @@
     
     <ul id="slide-out" class="side-nav">
         <?php
+            session_start();
             if(isset($_SESSION['user'])){
         ?>
             <li>
@@ -39,15 +40,15 @@
                         <img src="assets/img/back-profile.jpg">
                     </div>
                     <a href="#!user"><img class="circle" src="assets/img/male.png"></a>
-                    <a href="#!name"><span class="white-text name">Daniel Díaz Raudales</span></a>
-                    <a href="#!email"><span class="white-text email">dan.raudales.26@gmail.com</span></a>
+                    <a href="#!name"><span class="white-text name"><?php echo $_SESSION['user']; ?></span></a>
+                    <a href="#!email"><span class="white-text email"><?php echo $_SESSION['email']; ?></span></a>
                 </div>
             </li>
         <?php
             }
         ?>
             <br><li class="activo"><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
-            <li><a class="waves-effect" href="#"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
+            <li><a class="waves-effect" href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
             <li><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
             <li class="nav-menu"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
         <?php
@@ -57,7 +58,7 @@
             <li><a class="waves-effect" href="#!"><i class="material-icons">local_offer</i>Mis productos</a></li><hr>        
             <li><a class="waves-effect" href="#!"><i class="material-icons">local_grocery_store</i>Carrito de compras</a></li><hr>
             <li><a class="waves-effect" href="#!"><i class="material-icons">markunread_mailbox</i>Mis mensajes</a></li><hr>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">person_outline</i>Cerrar sesión</a></li><hr>
+            <li><a class="waves-effect" href="php/logout.php"><i class="material-icons">person_outline</i>Cerrar sesión</a></li><hr>
         <?php
             }
         ?>
