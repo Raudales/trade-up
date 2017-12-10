@@ -1,0 +1,30 @@
+html {
+    background: #E9E9E9;
+}
+.contenedor{
+    background: #fafafa;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 50px;
+    
+}
+.contenedor2{
+    width: 92%;
+    margin-left: 4%;
+}
+h4 {
+    font-size: 18px;
+    font-weight: 400;
+}
+h5 {
+    margin-left: 10px;
+}
+.product {
+    height: 250px;
+}
+.activo {
+    background: #ECC44A;
+}
+ul li.nav-menu:hover {
+    background: #ECC44A;
+}
