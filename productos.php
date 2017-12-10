@@ -60,6 +60,8 @@
 
             <?php
                 require 'php/connection.php';
+                $i = 0;
+                $products = array ();
                 $mysqli = connect();
                 if ($mysqli === false){
                     die("ERROR: No se establecio la conexion. ". mysqli_connect_error());
@@ -67,225 +69,43 @@
                 $mysqli->real_query("SELECT * FROM productos");        
                 $resultado = $mysqli->use_result();
                 while ($fila = $resultado->fetch_assoc()) {
-                    echo $fila['id'].", ". $fila['producto']."<br>";
+                    $products[$i][0] = $fila['id'];
+                    $products[$i][1] = $fila['producto'];
+                    $products[$i][2] = $fila['precio'];
+                    $products[$i][3] = $fila['descrip'];
+                    $products[$i][4] = $fila['img'];
+                    $i++;
+                }
+                $i = 0;
+                $counter=0;
+                $size = count($products);
+                while($i<$size){
+                    echo "<div class=\"row\" style=\"margin-top: 15px\">";
+                    for ($j=0;$j<3;$j++){
+                        echo "<div class=\"col s12 m4\">";
+                        echo "   <div class=\"card\">";
+                        echo "        <div class=\"card-image waves-effect waves-block waves-light\">";
+                        echo "            <img class=\"activator\" src=\"assets/product/".$products[$counter][4]."\">";
+                        echo "        </div>";
+                        echo "        <div class=\"card-content\">";
+                        echo "            <span class=\"card-title activator grey-text text-darken-4\">".$products[$counter][1]."<i class=\"material-icons right\">more_vert</i></span>";
+                        echo "            <p><a href=\"#\" class=\"add-item\" precio=\"".$products[$counter][2]."\" item=\"".$products[$counter][1]."\">Añadir al carrito</a></p>";
+                        echo "            <p>$ ".$products[$counter][2]."</p>";
+                        echo "        </div>";
+                        echo "        <div class=\"card-reveal\">";
+                        echo "            <span class=\"card-title grey-text text-darken-4\">".$products[$counter][1]."<i class=\"material-icons right\">close</i></span>";
+                        echo "            <p>".$products[$counter][3]."</p>";
+                        echo "        </div>";
+                        echo "    </div>";
+                        echo "</div>";
+                        $counter++;
+                    }
+                    echo "</div>";
+                    $i = $i+3;
                 }
             ?>
 
-            <div class="row" style="margin-top: 15px">
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/3.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#" id="add-item" precio="5499" item="Moto G5 Plus">Añadir al carrito</a></p>
-                            <p>$ 5499</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/1.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/5.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row" style="margin-top: 15px">
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/8.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/7.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/6.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="margin-top: 15px">
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/2.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/9.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="assets/product/4.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">Motorola G5 plus<i class="material-icons right">more_vert</i></span>
-                            <p><a href="#">Añadir al carrito</a></p>
-                            <p>$ 4,999</p>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Moto G5 Plus<i class="material-icons right">close</i></span>
-                            <p>Pantalla 5.2", 1080 x 1920 pixels <br>
-                               Procesador Snapdragon 625 2GHz <br>
-                               2GB/3GB/4GB RAM <br>
-                               32GB/64GB, microSD <br>
-                               Cámara: 12 MP <br>
-                               OS: Android 7.0 <br>
-                               Perfil: 7.7 mm <br>
-                               Peso: 155 g</p>
-                        </div>
-                    </div>
-                </div>
-            </div>                
         </div>
     </div>
         <!-- Footer -->
@@ -324,7 +144,7 @@
                 empty: 'No hay ningún producto'
             }
         });
-        $("#add-item").click(function (e){
+        $(".add-item").click(function (e){
             e.stopPropagation();
             paypal.minicart.cart.add({
                 business: 'dan.raudales.26@gmail.com',
