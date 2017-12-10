@@ -15,6 +15,10 @@ html {
     width: 92%;
     margin-left: 4%;
 }
+.card .card-title {
+    font-size: 18px;
+    font-weight: 400;
+}
 h4 {
     font-size: 24px;
     font-weight: 500;
