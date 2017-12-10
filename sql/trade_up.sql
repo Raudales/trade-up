@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-12-2017 a las 06:56:40
+-- Tiempo de generación: 11-12-2017 a las 00:22:57
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -60,17 +60,12 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_u` int(2) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `ap_pat` varchar(15) NOT NULL,
+  `sexo` varchar(1) NOT NULL,
+  `img_perfil` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `pass` varchar(16) NOT NULL,
+  `pass` varchar(32) NOT NULL,
   PRIMARY KEY (`id_u`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id_u`, `nombre`, `ap_pat`, `email`, `pass`) VALUES
-(1, 'Daniel', 'Díaz', 'dan.raudales.26@gmail.com', '1234');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
