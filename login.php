@@ -18,28 +18,63 @@
 </head>
 <body>
     <!--Navbar-->
+    <ul id="slide-out" class="side-nav">
+        <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+        ?>
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="assets/img/back-profile.jpg">
+                    </div>
+                    <a href="#!user"><img class="circle" src="assets/img/<?php echo $_SESSION['img']; ?>"></a>
+                    <a href="#!name"><span class="white-text name"><?php echo $_SESSION['user']; ?></span></a>
+                    <a href="#!email"><span class="white-text email"><?php echo $_SESSION['email']; ?></span></a>
+                </div>
+            </li>
+        <?php
+            }
+        ?>
+            <br><li><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
+            <li><a class="waves-effect" href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
+            <?php 
+                if(isset($_SESSION['user'])){}
+                else{
+                    echo "<li class=\"nav-menu activo\"><a href=\"login.php\"><i class=\"material-icons left\">assignment_ind</i>Iniciar sesión</a></li><hr>";
+                }
+            ?>
+        <?php
+            if(isset($_SESSION['user'])){
+        ?>
+            <li><a class="waves-effect" href="php/logout.php"><i class="material-icons">person_outline</i>Cerrar sesión</a></li><hr>
+        <?php
+            }
+        ?>
+    </ul>
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper grey darken-3 z-depth-2">
-                <img src="assets/img/tradeUp.png" style="max-width: 55px; margin-top: 12px;">
+                <img src="assets/img/tradeUp.png" style="max-width: 55px; margin-top: 10px;margin-left:8px;">
                 <a href="" class="brand-logo" style="margin-left: 10px">Trade Up</a>
                 <a href="" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="nav-menu"><a href="index.php"><i class="material-icons left">home</i>Inicio</a></li>
+                    <li class="nav-menu"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>
                     <li class="nav-menu"><a href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li>
-                    <li class="nav-menu"><a href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li>
-                    <li class="nav-menu activo"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
+                    <?php 
+                        if(isset($_SESSION['user'])){
+                            echo "<li class=\"nav-menu\"><a href=\"php/logout.php\"><i class=\"material-icons left\">person_outline</i>Cerrar sesión</a></li><hr>";
+                        }
+                        else{
+                            echo "<li class=\"nav-menu activo\"><a href=\"login.php\"><i class=\"material-icons left\">assignment_ind</i>Iniciar sesión</a></li><hr>";
+                        }
+                    ?>
+                    </a></li><hr>
                 </ul>
             </div>
         </nav>
     </div>
-    
-    <ul id="slide-out" class="side-nav">
-        <br><li><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
-        <li><a class="waves-effect" href="#"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
-        <li><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
-        <li class="activo"><a href="login.php"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li><hr>
-    </ul>
 
     <!--Body-->
     <div class="contenedor z-depth-1">
@@ -130,7 +165,7 @@
                         <p class="grey-text text-lighten-4"></p>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
+                        <h5 class="white-text"></h5>
                         <ul>
                             <li><a class="grey-text text-lighten-3" href="#!"></a></li>
                             <li><a class="grey-text text-lighten-3" href="#!"></a></li>

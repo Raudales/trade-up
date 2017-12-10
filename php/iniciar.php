@@ -31,10 +31,9 @@
 
                 }            
                 else {
-                    echo $fila[3]."<br>";
-                    echo $fila[4];
                     echo "<script>alert(\"Usuario y/o password incorrecto (s)\");</script>";
-                    //header("location: ../login.php");
+                    echo "<br>";
+                    echo "<a href=\"../login.php\" class=\"btn center\">Volver</a>";
                 }
 
             }   

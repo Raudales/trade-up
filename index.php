@@ -23,7 +23,7 @@
                     <div class="background">
                         <img src="assets/img/back-profile.jpg">
                     </div>
-                    <a href="#!user"><img class="circle" src="assets/img/"<?php echo $_SESSION['img']; ?>"></a>
+                    <a href="#!user"><img class="circle" src="assets/img/<?php echo $_SESSION['img']; ?>"></a>
                     <a href="#!name"><span class="white-text name"><?php echo $_SESSION['user']; ?></span></a>
                     <a href="#!email"><span class="white-text email"><?php echo $_SESSION['email']; ?></span></a>
                 </div>
@@ -33,7 +33,6 @@
         ?>
             <br><li class="activo"><a class="waves-effect" href="index.php"><i class="material-icons left">home</i>Inicio</a></li><hr>
             <li><a class="waves-effect" href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
-            <li><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
             <?php 
                 if(isset($_SESSION['user'])){}
                 else{
@@ -58,7 +57,6 @@
                 <ul class="right hide-on-med-and-down">
                     <li class="nav-menu activo"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>
                     <li class="nav-menu"><a href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li>
-                    <li class="nav-menu"><a href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li>
                     <?php 
                         if(isset($_SESSION['user'])){
                             echo "<li class=\"nav-menu\"><a href=\"php/logout.php\"><i class=\"material-icons left\">person_outline</i>Cerrar sesión</a></li><hr>";
@@ -160,16 +158,23 @@
             <h4>¿Qué es Trade Up?</h4>
             <div class="divider"></div>
             <div class="row">
-                <div class="col s4"><br>
+                <div class="col s12 m4 l4"><br>
                     <img src="assets/img/trade.png" class="responsive-img">
                 </div>
-                <div class="col s8"><br>
+                <div class="col s12 m8 l8"><br>
                     <h5>Acerca de Trade Up</h5>
-                    <p class="flow-text">
-                        Es una de las ...
+                    <p style="text-align: justify">
+                        Es una tienda online que te permite el pago mediante <strong>PayPal</strong>, además de que una de sus caracteristicas 
+                        principales es la posibilidad de navegar dentro de esta tienda en <strong>modo offline</strong>.
+                        Esto es posible ya que el sitio se desarrollo con tecnologias nuevas, la tecnologia que permite esto
+                        es un tipo de aplicaciones web denominadas <strong>Aplicaciones Web Progresivas</strong>.
                     </p>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
         <!-- Footer -->
@@ -181,7 +186,7 @@
                         <p class="grey-text text-lighten-4"></p>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Links</h5>
+                        <h5 class="white-text"></h5>
                         <ul>
                             <li><a class="grey-text text-lighten-3" href="#!"></a></li>
                             <li><a class="grey-text text-lighten-3" href="#!"></a></li>
