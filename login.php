@@ -60,7 +60,7 @@
                     <h4>Inicia sesión</h4>
                     <div class="divider"></div>
                     <form method="post" class="col s12 m12 l12" action="php/iniciar.php">
-                        <div class="row">
+                        <div class="row"><br>
                             <div class="input-field col s12 m12 l6">
                                 <i class="material-icons prefix">mail</i>
                                 <input id="correo" name="correo" type="email" class="validate" required="true">
@@ -71,7 +71,7 @@
                                 <input id="password" name="password" type="password" class="validate" required="true">
                                 <label for="password">Contraseña</label>
                             </div>
-                            <button class="btn center" type="submit">Iniciar sesión</button><br><br>
+                            <button class="btn center" type="submit">Iniciar sesión</button><br><br><br>
                         </div>
                     </form>
                 </div>
@@ -79,37 +79,42 @@
                 <h4>Registrate</h4>
                 <div class="divider"></div>
                 <form method="post" class="col s12 m12 l12" action="../php/registro.php">
-                        <div class="row">
+                        <div class="row"><br>
                             <div class="input-field col s12 m12 l6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="nombre" type="text" class="validate" required="true">
+                                <input id="nombre" name="nombre" type="text" class="validate" required="true">
                                 <label for="nombre">Nombre</label>
                             </div>
                             <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="ap_pat" name="ap_pat" type="text" class="validate" required="true">
+                                <label for="ap_pat">Apellido paterno</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
                                 <i class="material-icons prefix">mail</i>
-                                <input id="email" type="email" class="validate" required="true">
+                                <input id="email" name="email" type="email" class="validate" required="true">
                                 <label for="email">Correo elétronico</label>
                             </div>
                             <div class="input-field col s12 m12 l6">
-                                <i class="material-icons prefix">lock</i>
-                                <input id="pass" type="password" class="validate" required="true">
-                                <label for="pass">Contraseña</label>
-                            </div>
-                            <div class="input-field col s12 m12 l6">
-                                <i class="material-icons prefix">lock</i>
-                                <input id="pass2" type="password" class="validate" required="true">
-                                <label for="pass2">Confirmar contraseña</label>
-                            </div>
-                            <div class="input-field col s12 m12 l6">
                                 <i class="material-icons prefix">wc</i>
-                                <select>
+                                <select name="sexo">
                                     <option value="" disabled selected>Sexo</option>
                                     <option value="H">Hombre</option>
                                     <option value="M">Mujer</option>
                                 </select>
                             </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="pass" name="pass" type="password" class="validate" required="true">
+                                <label for="pass">Contraseña</label>
+                            </div>
+                            <div class="input-field col s12 m12 l6">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="pass2" name="pass2" type="password" class="validate" required="true">
+                                <label for="pass2">Confirmar contraseña</label>
+                            </div>
                         </div>
-                        <a href="php/registro.php" type="submit" class="btn center">Registrarme</a><br><br>
+                        <button class="btn center" type="submit">Registrarme</button><br><br><br>
                     </form>
                 </div>
                 </div>

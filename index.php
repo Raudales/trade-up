@@ -23,7 +23,7 @@
                     <div class="background">
                         <img src="assets/img/back-profile.jpg">
                     </div>
-                    <a href="#!user"><img class="circle" src="assets/img/male.png"></a>
+                    <a href="#!user"><img class="circle" src="assets/img/"<?php echo $_SESSION['img']; ?>"></a>
                     <a href="#!name"><span class="white-text name"><?php echo $_SESSION['user']; ?></span></a>
                     <a href="#!email"><span class="white-text email"><?php echo $_SESSION['email']; ?></span></a>
                 </div>
