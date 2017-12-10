@@ -1,6 +1,9 @@
 html {
     background: #E9E9E9;
 }
+.card {
+    z-index: 0;
+}
 .contenedor{
     background: #fafafa;
     width: 80%;

@@ -21,8 +21,8 @@
                 <a href="" data-activates="slide-out" class="button-collapse right"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li class="nav-menu activo"><a href="#"><i class="material-icons left">home</i>Inicio</a></li>
-                    <li class="nav-menu"><a href="productos.html"><i class="material-icons left">dashboard</i>Productos</a></li>
-                    <li class="nav-menu"><a href="contacto.html"><i class="material-icons left">phone</i>Contacto</a></li>
+                    <li class="nav-menu"><a href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li>
+                    <li class="nav-menu"><a href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li>
                     <li class="nav-menu" id="side-bar" data-activates="slide-out"><a href="#"><i class="material-icons left">assignment_ind</i>Iniciar sesión</a></li>
                 </ul>
             </div>
@@ -41,8 +41,8 @@
             </div>
         </li>
         <li class="activo"><a class="waves-effect" href="#"><i class="material-icons left">home</i>Inicio</a></li><hr>
-        <li><a class="waves-effect" href="productos.html"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
-        <li><a class="waves-effect" href="contacto.html"><i class="material-icons left">phone</i>Contacto</a></li><hr>
+        <li><a class="waves-effect" href="productos.php"><i class="material-icons left">dashboard</i>Productos</a></li><hr>
+        <li><a class="waves-effect" href="contacto.php"><i class="material-icons left">phone</i>Contacto</a></li><hr>
         <li><a class="waves-effect" href="#!"><i class="material-icons">mode_edit</i>Editar perfil</a></li><hr>        
         <li><a class="waves-effect" href="#!"><i class="material-icons">local_offer</i>Mis productos</a></li><hr>        
         <li><a class="waves-effect" href="#!"><i class="material-icons">local_grocery_store</i>Carrito de compras</a></li><hr>
