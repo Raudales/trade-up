@@ -200,7 +200,7 @@
         </footer>
     </div>
 
-    
+    <script src="js/sw.js"></script>
     <script type="Text/javascript" src="js/minicart.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
